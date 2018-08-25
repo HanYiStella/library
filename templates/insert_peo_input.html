@@ -1,0 +1,38 @@
+<title>Insert People</title>
+<h1>新增成員</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('insert_peo_solution',account=account,password=password) }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.insert_peo_id) }}
+    {{ render_field(form.insert_peo_status) }}
+    {{ render_field(form.insert_peo_class) }}
+    {{ render_field(form.insert_peo_number) }}
+    {{ render_field(form.insert_peo_name) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<ul>
+  <li>以下為沒有資料的的編碼：
+  {% for i in empty_peo_id %}
+	  <ul>
+	  <li>{{ i[0] }}
+	  </ul>
+    {% endfor %}
+</ul>
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>
+
+
+
+

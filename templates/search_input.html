@@ -1,0 +1,22 @@
+<title>Search Book</title>
+<h1>搜尋</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="/search_solution">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.key_word) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>
+
+
+

@@ -1,0 +1,20 @@
+<title>Forget Account</title>
+<h1>忘記密碼</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('forget_solution') }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.account) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+
+<body>
+	<hr>
+	<div><a href="/library">首頁</a></div>
+</body>

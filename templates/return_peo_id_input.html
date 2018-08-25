@@ -1,0 +1,17 @@
+<title>Return Book</title>
+<h1>還書</h1>
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('return_book',account=account,password=password) }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.people_word) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>

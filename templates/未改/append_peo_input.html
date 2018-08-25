@@ -1,0 +1,17 @@
+<title>Manager</title>
+<h1>{{title}}</h1>
+{% from "_field.html" import render_field %}
+<form method="POST" action="/append_peo/solution">
+  {{ form.hidden_tag() }}
+  <p>目前最大書目編碼{{ max_peo_id }}</p>
+  <table>
+    {{ render_field(form.id_word) }}
+    {{ render_field(form.name_word) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>

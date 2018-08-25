@@ -1,0 +1,16 @@
+<html>
+    <title>User</title>
+    <h1>使用者</h1>
+    <body>
+        <div><a href="{{ url_for('borrow_peo',account=account,password=password) }}">借書</a></div>
+        <div><a href="{{ url_for('return_peo',account=account,password=password) }}">還書</a></div>
+    </body>
+</html>
+
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>
+
+

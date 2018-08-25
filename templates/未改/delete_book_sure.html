@@ -1,0 +1,14 @@
+<title>Manager</title>
+<h1>{{title}}</h1>
+{% from "_field.html" import render_field %}
+<form method="POST" action="/delete_book/solution">
+  <table>
+    {{ render_field(form) }}
+  </table>
+  <input type="submit" value="Go"><input type="button" value="取消" onclick="location.href='/delete_book'">
+</form>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>

@@ -1,0 +1,23 @@
+<title>Login</title>
+<h1>登入</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="/login/solution">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.account) }}
+    {{ render_field(form.password) }}
+  </table>
+  <input type="submit" value="Go">  <div><a href="/forget_password/input">忘記密碼</a></div>
+</form>
+
+<body>
+	<hr>
+	<div><a href="/library">首頁</a></div>
+</body>
+
+
+

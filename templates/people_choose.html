@@ -1,0 +1,18 @@
+<html>
+    <head>
+      <title>Manager</title>
+      <h1>管理者--成員管理</h1>
+    </head>
+    <body>
+        <button onclick="location.href='{{ url_for('delete_peo_search',account=account,password=password) }}'" >成員刪除</button>
+        <button onclick="location.href='{{ url_for('insert_peo_input',account=account,password=password) }}'" >成員新增</button>
+    </body>
+</html>
+<button onclick="location.href='{{ url_for('peo_search_all',account=account,password=password) }}'" >全部成員</button>
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+    <hr>
+    <div><a href="/library">登出</a></div>
+</body>
+

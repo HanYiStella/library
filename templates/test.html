@@ -1,0 +1,31 @@
+<title>Search Book</title>
+<h1>搜尋</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <table>
+    <ul>
+    {{ render_field(form.gender) }} 
+    {{ render_field(form.test) }}
+    {{ render_field(form.test2) }} <li>test</li>
+    {{ render_field(form.job) }}
+    {{ render_field(form.test3) }}
+  </ul>
+  </table>
+  <button type="submit" onclick="location.href='{{ url_for('test2') }}'">test2</button>
+  <input type="submit" value="Go" onclick="location.href='/test1'"> <input type="submit" value="test1" action="/test1_solution">
+</form>
+
+
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>
+
+
+

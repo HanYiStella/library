@@ -1,0 +1,35 @@
+<title>Insert Book</title>
+<h1>新增書目</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('insert_book_solution',account=account,password=password) }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.insert_book_id) }}
+    {{ render_field(form.insert_book_name) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<ul>
+  <li>以下為沒有資料的的編碼：
+  {% for i in empty_book_id %}
+	  <ul>
+	  <li>{{ i[0] }}
+	  </ul>
+    {% endfor %}
+</ul>
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>
+
+
+
+

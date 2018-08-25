@@ -1,0 +1,47 @@
+<title>Delete People</title>
+<h1>輸入要刪除的成員編碼</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('delete_peo_sure',key_word=key_word,account=account,password=password) }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.peo_id_input) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+{% if search_peo %}
+  <table>
+    <thead>
+    <th>成員編碼</th>
+    <th>成員身份</th>
+    <th>成員班級</th>
+    <th>成員號碼</th>
+    <th>成員姓名</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+      {% for i in search_peo %}
+        <tr>
+            <td>{{ i[0] }}</td>
+            <td>{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
+            <td>{{ i[3] }}</td>
+            <td>{{ i[4] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{% endif %}
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>
+

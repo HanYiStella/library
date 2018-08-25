@@ -1,0 +1,31 @@
+<title>Insert People</title>
+<h1>新增成功</h1>
+
+</form>
+
+  <table>
+    <thead>
+    <th>成員編碼</th>
+    <th>成員身份</th>
+    <th>成員班級</th>
+    <th>成員號碼</th>
+    <th>成員姓名</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+        <tr>
+            <td>{{ print_insert_peo[1] }}</td>
+            <td>{{ print_insert_peo[2] }}</td>
+            <td>{{ print_insert_peo[3] }}</td>
+            <td>{{ print_insert_peo[4] }}</td>
+            <td>{{ print_insert_peo[5] }}</td>
+        </tr>
+    </tbody>
+</table>
+<button onclick="location.href='{{ url_for('insert_peo_input',account=account,password=password) }}'" >繼續新增</button>
+<button onclick="location.href='{{ url_for('peo_search_all',account=account,password=password) }}'" >全部成員</button>
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>

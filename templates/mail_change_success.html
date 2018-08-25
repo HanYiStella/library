@@ -1,0 +1,15 @@
+<h1>信息發送成功！</h1>
+
+<body>
+	<p>請去{{ send_mail }}收信確認信箱喔！</p>
+	<p>若您的新信箱沒有收到更改成功的信，請按下面重新設定信箱的按鈕再重新設定一次喔！</p>
+	<button onclick="location.href='{{ url_for('change_email_input',account=account, password=password,change_account=change_account) }}'" >重新設定信箱</button>
+</body>
+
+<body>
+	<hr>
+	<div><a href="/library">首頁</a></div>
+</body>
+
+
+

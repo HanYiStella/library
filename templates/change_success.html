@@ -1,0 +1,11 @@
+<title>Change Account</title>
+<h1>更改密碼</h1>
+
+<p>{{ change_account }}密碼更改成功！</p>
+
+
+<button onclick="location.href='{{ url_for('login_successed',account=account ,password=password ) }}'" >回到{{ back_home }}首頁</button>
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>

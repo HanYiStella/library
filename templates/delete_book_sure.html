@@ -1,0 +1,40 @@
+<title>Delete Book</title>
+<h1>確認要刪除？</h1>
+<form method="POST" action="{{ url_for('delete_book_solution',select_book_id = select_book_id,account=account,password=password) }}">
+  <table>
+    <thead>
+    <th>書目編碼</th>
+    <th>書名</th>
+    <th>是否已借出</th>
+    <th>成員編碼</th>
+    <th>成員身份</th>
+    <th>成員班級</th>
+    <th>成員號碼</th>
+    <th>成員姓名</th>
+    <th>借出時間</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+        <tr>
+            <td>{{ select_delete_book[1] }}</td>
+            <td>{{ select_delete_book[2] }}</td>
+            <td>{{ select_delete_book[3] }}</td>
+            <td>{{ select_delete_book[4] }}</td>
+            <td>{{ select_delete_book[5] }}</td>
+            <td>{{ select_delete_book[6] }}</td>
+            <td>{{ select_delete_book[7] }}</td>
+            <td>{{ select_delete_book[8] }}</td>
+            <td>{{ select_delete_book[9] }}</td>
+        </tr>
+    </tbody>
+</table>
+  <input type="submit" value="Go"> 
+</form>
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>
+

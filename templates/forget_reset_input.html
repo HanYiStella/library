@@ -1,0 +1,23 @@
+<title>Change Password</title>
+<h1>變更密碼</h1>
+{% if error %}
+  {{ error }}
+{% else %}
+{% endif %}
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('forget_reset_solution', account=account) }}">
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.new_password) }}
+    {{ render_field(form.new_password_again) }}
+  </table>
+  <input type="submit" value="Go">
+</form>
+
+<body>
+	<hr>
+	<div><a href="/library">Home</a></div>
+</body>
+
+
+

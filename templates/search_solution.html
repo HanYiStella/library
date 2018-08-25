@@ -1,0 +1,30 @@
+<title>Search Book</title>
+<h1>搜尋結果</h1>
+
+{% if search_book %}
+  <table>
+    <thead>
+    <th>書目編碼</th>
+    <th>書名</th>
+    <th>是否已借出</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+      {% for i in search_book %}
+        <tr>
+            <td>{{ i[0] }}</td>
+            <td>{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{% endif %}
+
+
+<body>
+	<hr>
+	<div><a href="/library">首頁</a></div>
+</body>
+

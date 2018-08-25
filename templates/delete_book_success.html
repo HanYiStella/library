@@ -1,0 +1,27 @@
+<title>Delete Book</title>
+<h1>刪除成功</h1>
+
+</form>
+
+  <table>
+    <thead>
+    <th>書目編碼</th>
+    <th>書名</th>
+    <th>借書狀況</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+        <tr>
+            <td>{{ select_book[1] }}</td>
+            <td>{{ select_book[2] }}</td>
+            <td>{{ select_book[3] }}</td>
+        </tr>
+    </tbody>
+</table>
+<button onclick="location.href='{{ url_for('delete_book_search',account=account, password=password) }}'" >繼續刪除</button>
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>
+</body>

@@ -1,0 +1,42 @@
+<title>Borrow Book</title>
+<h1>借書</h1>
+{% from "_field.html" import render_field %}
+<form method="POST" action="{{ url_for('borrow_solution',account=account,password=password) }}">
+  <p> 成員編碼：{{peo_id}}  身份：{{peo_sta}}  班級：{{peo_class}}  座號：{{peo_num}}  姓名：{{peo_name}}</p>
+  {{ form.hidden_tag() }}
+  <table>
+    {{ render_field(form.book_word) }}
+  </table>
+  <div style="display:none">
+    <input name=peo_word type="text" value={{peo_word}}>
+  </div>
+  <input type="submit" value="Go">
+</form>
+
+{% if print_bor_book %}
+  <table>
+    <thead>
+    <th>書目編碼</th>
+    <th>書名</th>
+    <th>借書時間</th>
+    </thead>
+    <tbody>
+      <meta charset="UTF-8">
+      {% for i in print_bor_book %}
+        <tr>
+            <td>{{ i[0] }}</td>
+            <td>{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{% endif %}
+
+<button onclick="location.href='{{ url_for('login_successed',account=account, password=password) }}'" >回到{{ back_home }}首頁</button>
+
+<body>
+	<hr>
+	<div><a href="/library">登出</a></div>  
+</body>
